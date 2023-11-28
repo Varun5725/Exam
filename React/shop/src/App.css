@@ -1,0 +1,15 @@
+/* App.css */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shopping-card {
+  justify-content: space-between;
+  background-color: aliceblue;
+  padding: 20px 30px;
+}
+
+.product-item {
+  padding: 20px;
+}
