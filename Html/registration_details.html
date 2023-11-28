@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="registration_validation.js"></script>
+</head>
+<body>
+    <h2>User Details</h2>
+    <form>
+        <p><b>Full Name:</b> <span id="fullName"></span></p>
+        <p><b>Email:</b> <span id="email"></span></p>
+        <p><b>Mobile Number:</b> <span id="phoneNumber"></span></p>
+        <p><b>Address:</b> <span id="address"></span></p>
+        <p><b>Branch:</b> <span id="branch"></span></p>
+        <p><b>Gender:</b> <span id="gender"></span></p>
+        
+        <input type="submit" value="Thanks">
+    </form>
+
+
+    <script>
+        document.getElementById("fullName").textContent = sessionStorage.name;
+        document.getElementById("address").textContent = sessionStorage.address;
+        document.getElementById("email").textContent = sessionStorage.email;
+        document.getElementById("phoneNumber").textContent = sessionStorage.phoneNumber;
+        document.getElementById("gender").textContent = sessionStorage.gender;
+        document.getElementById("branch").textContent = sessionStorage.branch;
+    </script>
+</body>
+</html>

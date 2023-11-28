@@ -410,4 +410,33 @@ E:\Exam>git remote -v
 origin  https://github.com/Varun5725/Exam.git (fetch)
 origin  https://github.com/Varun5725/Exam.git (push)
 
+E:\Exam>git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+E:\Exam>git add file
+
+E:\Exam>git commit -m "updated"
+[main c9fb1d9] updated
+ 1 file changed, 412 insertions(+)
+
+E:\Exam>git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.86 KiB | 2.86 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Varun5725/Exam.git
+   25780b6..c9fb1d9  main -> main
+
 E:\Exam>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function log() {
+      var user = document.getElementById('user').value;
+      var password = document.getElementById('pass').value;
+
+      if ((user != 'Gptcpt') || (password != 'GptcptCS')) {
+        alert("Invalid UserId or Password");
+        return false;
+      }
+
+      return true;
+    }
+
+  </script>
+</head>
+
+<body>
+  <h2>Login</h2>
+  <div>
+    <form method="post" onsubmit="return log()" action="login_success.html">
+      <label><b>Username:</b></label><br>
+      <input type="text" id="user" name="username" placeholder="Enter your username" required><br><br>
+      <label><b>Password:</b></label><br>
+      <input type="password" id="pass" name="password" placeholder="Enter your password" required><br><br>
+      <hr color="orange"><br>
+      <input type="submit" value="Login">
+    </form>
+    <h6><u>name</u> : Gptcpt <br><u>password</u> : GptcptCS</h6>
+  </div>
+</body>
+
+</html>

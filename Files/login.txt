@@ -1,6 +1,7 @@
+//login
 import React, { useState } from 'react';
 import Success from './Success';
-import "./App.css"
+import "./App.css
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -49,3 +50,52 @@ function Login() {
 }
 
 export default Login;
+
+
+//Success
+ import React from 'react'
+
+function Success() {
+    return ( <h1>Logged in</h1> );
+}
+
+export default Success;
+
+
+//App.csss
+/* App.css */
+
+form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  color: red;
+  text-align: center;
+}
+

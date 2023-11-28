@@ -1,0 +1,206 @@
+// Appp.js
+import React, { useState } from 'react';
+import Header from './components/Header';
+import ProductList from './components/ProductList';
+import CartList from './components/CartList';
+
+function App() {
+
+  const [product, setProduct] = useState([
+
+    {
+      url: "https://th.bing.com/th/id/OIP.tqR7GXnTrABvILUwwufQjQHaFf?w=265&h=196&c=7&r=0&o=5&pid=1.7",
+      name: "mac book",
+      seller: "Apple",
+      category: "tablet",
+      price: 99000
+    }
+    ,
+    {
+      url: "https://th.bing.com/th/id/OIP.xblGv6SOOip2Nh4x-WDFwgHaGs?w=203&h=184&c=7&r=0&o=5&pid=1.7",
+      name: "ipad",
+      seller: "Apple",
+      category: "tablet",
+      price: 40000
+    },
+    {
+      url: "https://th.bing.com/th/id/OIP.YZB6DhOuZm1mwIc4RchChwHaE8?w=134&h=196&c=7&r=0&o=5&pid=1.7",
+      name: "imac",
+      seller: "Apple",
+      category: "PC",
+      price: 200000
+    },
+    {
+      url: "https://th.bing.com/th/id/OIP.71Q5tMlNNXoDQ54Oz_R3gAHaEL?w=332&h=187&c=7&r=0&o=5&pid=1.7",
+      name: "mac mini",
+      seller: "Apple",
+      category: "mini pc",
+      price: 69999
+    },
+    {
+      url: "https://th.bing.com/th/id/OIP.2D4b8JEB_jLfWiAMEdYo4gHaEK?w=313&h=180&c=7&r=0&o=5&pid=1.7",
+      name: "iphonne 15 ",
+      seller: "Apple",
+      category: "Smart phone",
+      price: 120000
+    }
+  ]);
+  // State for cart data
+  const [cart, setCart] = useState([]);
+
+  // State for showing cart or product list
+  const [showCart, setShowCart] = useState(false);
+
+  // Function to add a product to the cart
+  const addToCart = (data) => setCart([...cart, { ...data, quantity: 1 }]);
+
+  // Function to handle showing cart or product list
+  const handleShow = (value) => setShowCart(value);
+
+  return (
+    <div>
+      {/* Header component with count of items in the cart */}
+      <Header handleShow={handleShow} count={cart.length} />
+
+      {/* Conditional rendering based on showCart state */}
+      {showCart ?
+        // If showCart is true, render CartList component
+        (<CartList cart={cart} setCart={setCart} />)
+        :
+        // If showCart is false, render ProductList component
+        (<ProductList product={product} addToCart={addToCart} />)
+      }
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+// CartList.jsx
+import React from 'react';
+
+function CartList({ cart, setCart }) {
+  // Function to handle quantity change in the cart
+  const handleQuantityChange = (index, change) => {
+    // Updating the cart using the setCart function and the previous cart state
+    setCart(prevCart => {
+      // Mapping through each item in the previous cart
+      const updatedCart = prevCart.map((item, cartIndex) => {
+        // Checking if the current item index matches the provided index
+        if (cartIndex === index) {
+          // Calculating the new quantity, ensuring it's at least 0
+          const newQuantity = Math.max(item.quantity + change, 0);
+          // Returning a new item object with the updated quantity
+          return { ...item, quantity: newQuantity };
+        } else {
+          // Returning the unchanged item for other indices
+          return item;
+        }
+      });
+      // Filtering out items with quantity less than or equal to 0
+      return updatedCart.filter(item => item.quantity > 0);
+    });
+  }
+
+  return (
+    <div>
+      {/* Mapping through items in the cart */}
+      {cart.map((cartItem, index) => (
+        <div key={index} className='cart-item'>
+          {/* Displaying item details and quantity controls */}
+          <img src={cartItem.url} width='10%' alt={cartItem.name} />
+          <p>
+            {cartItem.name}
+            <button onClick={() => handleQuantityChange(index, -1)}>-</button>
+            <span>{cartItem.quantity}</span>
+            <button onClick={() => handleQuantityChange(index, 1)}>+</button>
+            <span>Rs.{cartItem.price * cartItem.quantity}</span>
+          </p>
+        </div>
+      ))}
+      {/* Displaying total price of items in the cart */}
+      <div>
+        <span>Total : </span><span>{cart.reduce((total, item) => total + item.price * item.quantity, 0)}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+export default CartList;
+
+
+
+
+
+// Header.js
+import React from 'react';
+import "../App.css";
+
+function Header(props) {
+    return (
+        <div className='flex shopping-card'>
+            <div onClick={() => props.handleShow(false)}>SHOPPING CART</div>
+            <div onClick={() => props.handleShow(true)}> CART<sup>{props.count}</sup></div>
+        </div>
+    );
+}
+export default Header;
+
+
+
+
+// ProductList.js
+import React from 'react';
+import "../App.css"
+
+function ProductList({ product, addToCart }) {
+  return (
+    <div className='flex'>
+      {
+        product.map((productItem, index) =>
+          <div style={{ width: '33%' }}>
+            <div key={index}>
+              <img src={productItem.url} width='50%' alt={productItem.name} />
+              <p>
+                {productItem.name} | {productItem.category}
+              </p>
+              <p>
+                {productItem.seller}
+              </p>
+              <p>Rs .{productItem.price}/-</p>
+              <button onClick={() => addToCart(productItem)}>addToCart</button>
+
+            </div>
+          </div>
+
+        )
+      }
+
+    </div>
+  )
+}
+export default ProductList;
+
+
+
+
+/* App.css */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shopping-card {
+  justify-content: space-between;
+  background-color: rgb(91, 162, 224);
+  padding: 20px 30px;
+}
+
+.product-item {
+  padding: 20px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="registration_validation.js"></script>
+</head>
+<body>
+  <h2>Student Registration</h2>
+  <form method="post" onsubmit="return Validate()" action="registration_details.html">
+    <label><b>Name : </b></label><br>
+    <input type="text" name="fname" id="fname" placeholder="Enter your Full Name" required><br><br>
+    <label><b>Email : </b></label><br>
+    <input type="text" name="email" id="mail" placeholder="Enter your email" required><br><br>
+    <label><b>Mobile Number : </b></label><br>
+    <input type="text" name="phno" id="phno" placeholder="Enter your phone number " required><br><br>
+    <label><b>Address : </b></label><br>
+    <textarea id="add" placeholder="Enter your address" required></textarea><br><br>
+   
+    <label><b>Branch :</b></label><br>
+    <select id="branch" name="branch" required>
+      <option value="" disabled selected>Select Your Branch</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Auto Mobile">Auto Mobile</option>
+      <option value="Mechanical">Mechanical Engineering</option>
+      <option value="Electrical">Electrical Engineering</option>
+      <option value="Electrical Communication">Electrical and Communication</option>
+    </select>
+   
+    <br><br>
+     <label><b>Gender :</b></label><br>
+    <input type="radio" name="gender" id="genderMale" value="male">Male
+    <input type="radio" name="gender" id="genderFemale" value="female">Female<br><br>
+
+
+   
+    <hr color="orange"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="feedback_validation.js"></script>
+</head>
+<body>
+    <form>
+        <h2>Feedback Details</h2>
+        <p><b>Name:</b> <span id="name"></span></p>
+        <p><b>Register number:</b> <span id="reg"></span></p>
+        <p><b>Sem:</b> <span id="sem"></span></p>
+        <p><b>Course:</b> <span id="course"></span></p>
+        <p><b>Faculty:</b> <span id="faculty"></span></p>
+        <hr color="orange">
+        <h3>Feedback values</h3>
+        <p><b>Hand Gestures:</b> <span id="handSkills"></span></p>
+        <p><b>Communication Skills:</b> <span id="communicationSkills"></span></p>
+        <input type="submit" value="Thanks">
+        <script>
+            document.getElementById("name").textContent = sessionStorage.name;
+            document.getElementById("reg").textContent = sessionStorage.reg;
+            document.getElementById("sem").textContent = sessionStorage.sem;
+            document.getElementById("course").textContent = sessionStorage.course;
+            document.getElementById("faculty").textContent = sessionStorage.faculty;
+            document.getElementById("handSkills").textContent = sessionStorage.hand;
+            document.getElementById("communicationSkills").textContent = sessionStorage.comm;
+        </script>
+    </form>
+</body>
+</html>

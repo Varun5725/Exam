@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="feedback_validation.js"></script>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+    <form name="myform" method="post" onsubmit="return store()" action="display_feedback.html">
+        <label><b>Your Name:</b></label><br>
+        <input type="text" name="fname" id="name" placeholder="Enter your full name" required><br><br>
+        <label><b>Register number:</b></label><br>
+        <input type="text" name="register" id="reg" placeholder="Enter your register number" required><br><br>
+        <label><b>Sem:</b></label><br>
+        <input type="text" name="sem" id="sem" placeholder="Enter your sem" required><br><br>
+        <label><b>Course:</b></label><br>
+        <select id="course" required>
+            <option value="" disabled selected>Choose a Course</option>
+            <option value="Python">Python</option>
+            <option value="OSA">OSA</option>
+            <option value="Java">Java</option>
+            <option value="SEPP">SEPP</option>
+            <option value="IC">IC</option>
+        </select><br><br>
+        <label><b>Faculty:</b></label><br>
+        <input type="text" name="teacher" id="faculty" placeholder="Enter the course auditor name" required><br><br>
+        <br>
+        <table>
+            <tr>
+                <th>Skills</th>
+                <th colspan="5">Feedback</th>
+            </tr>
+            <tr>
+                <th>Hand Gestures</th>
+                <td><input type="radio" name="handgestures" value="Poor" >Poor</td>
+                <td><input type="radio" name="handgestures" value="Satisfactory">Satisfactory</td>
+                <td><input type="radio" name="handgestures" value="Good" checked>Good</td>
+                <td><input type="radio" name="handgestures" value="very good">Very Good</td>
+                <td><input type="radio" name="handgestures" value="Excellent">Excellent</td>
+            </tr>
+            <tr>
+                <th>Communication Skills</th>
+                <td><input type="radio" name="communication" value="Poor">Poor</td>
+                <td><input type="radio" name="communication" value="Satisfactory">Satisfactory</td>
+                <td><input type="radio" name="communication" value="Good">Good</td>
+                <td><input type="radio" name="communication" value="Very Good" checked>Very Good</td>
+                <td><input type="radio" name="communication" value="Excellent">Excellent</td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

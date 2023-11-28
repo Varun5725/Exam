@@ -1,0 +1,111 @@
+import React, { Component } from 'react';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Contact from './Contact';
+import NoPage from './NoPage';
+import Blogs from './Blogs';
+import './App.css'; // Import your CSS file
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="app-container">
+          <ul className="nav-list">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Contact" className="nav-link">Contact</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/blogs" className="nav-link">Blogs</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/NoPage" className="nav-link">NoPage</Link>
+            </li>
+          </ul>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Contact' element={<Contact />} />
+            <Route path='/blogs' element={<Blogs />} />
+            <Route path='/NoPage' element={<NoPage />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;
+
+
+//Blogs
+import React from 'react'
+function Blogs() {
+    return (  <h1> Blog Articles </h1>);
+}
+
+export default Blogs;
+
+
+//Contact
+import React from 'react'
+function Contact() {
+    return ( <h1>Contact me </h1>);
+}
+
+export default Contact;
+
+
+//Home
+import React from 'react'
+function Home() {
+    return ( <h1> Home </h1> );
+}
+
+export default Home;
+
+
+//NoPage
+import React from 'react'
+function NoPage() {
+    return ( <h1>
+        404
+    </h1> );
+}
+
+export default NoPage;
+
+
+
+//App.css
+.App {
+  text-align: center;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
