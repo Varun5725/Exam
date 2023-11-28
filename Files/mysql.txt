@@ -1,0 +1,206 @@
+//User
+package com.sql.MySql;
+
+import jakarta.persistence.*;
+
+@Entity
+public class User {
+	
+	@Id
+	private Long id;
+	private String firstname;
+	private String lastname;
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+
+	public String getLastname() {
+		return lastname;
+	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+
+	public User() {
+	
+	}
+	
+	
+
+}
+
+
+
+
+//UserRepository
+
+package com.sql.MySql;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+}
+
+
+
+//UserController
+package com.sql.MySql;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/User")
+public class UserController {
+	
+	@Autowired
+	private UserRepository Ur;
+	
+	@GetMapping
+	public List<User> getAllUser(){
+		return this.Ur.findAll();
+	}
+	
+	@GetMapping("/{id}")
+	public User getUserById(@PathVariable("id") long userId) {
+		return this.Ur.findById(userId).orElse(null);
+	}
+	
+	@PostMapping
+	public User createUser(@RequestBody User user) {
+		return this.Ur.save(user);
+	}
+	
+	@PutMapping("/{id}")
+	public User updateUser(@RequestBody User user , @PathVariable("id") long userId) {
+		User ex=this.Ur.findById(userId).orElse(null);
+		ex.setFirstname(user.getFirstname());
+		ex.setFirstname(user.getFirstname());
+		
+		return this.Ur.save(ex);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<User> deleteUser(@PathVariable("id") long userId){
+		User ex=this.Ur.findById(userId).orElse(null);
+		this.Ur.delete(ex);
+		return ResponseEntity.ok().build();
+		
+	}
+}
+
+
+
+//application.properties
+
+server.port=555
+spring.datasource.url=jdbc:mysql://localhost:3306/varun
+spring.datasource.username=root
+spring.datasource.password=new123
+spring.jpa.hibernate.ddl-auto=update
+
+
+
+//UserApplicationTests.java
+
+package com.sql.MySql;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+
+@SpringBootTest
+class UserApplicationTests {
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Test
+    @Transactional
+    public void testCreate() {
+        User user = new User();
+        user.setId(60L);
+        user.setFirstname("Varun"); // Corrected the field name
+        user.setFirstname("B");
+        User savedUser = userRepository.save(user);
+
+        assertThat(savedUser.getId()).isNotNull();
+    }
+
+    @Test
+    public void testReadAll() {
+        List<User> userList = userRepository.findAll();
+        assertThat(userList).isNotEmpty();
+    }
+
+    @Test
+    @Transactional
+    public void testUpdate() {
+        User user = userRepository.findById(2L).orElse(null);
+        assertThat(user).isNotNull();
+
+        user.setFirstname("Daya");
+        userRepository.save(user);
+
+        // Check if the update was successful
+        User updatedUser = userRepository.findById(2L).orElse(null);
+        assertThat(updatedUser).isNotNull();
+        assertThat(updatedUser.getFirstname()).isEqualTo("Daya");
+    }
+
+    @Test
+    @Transactional
+    public void testDelete() {
+        userRepository.deleteById(2L);
+
+        // Check if the user with ID 2L was successfully deleted
+        assertThat(userRepository.existsById(2L)).isFalse();
+    }
+}
+
+
+//UserApplication.java
+package com.sql.MySql;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class UserApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(UserApplication.class, args);
+	}
+
+}
