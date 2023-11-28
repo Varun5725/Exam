@@ -1,1 +1,413 @@
+Microsoft Windows [Version 10.0.19045.3324]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\Exam>git init
+Initialized empty Git repository in E:/Exam/.git/
+
+E:\Exam>git add .
+warning: in the working copy of 'React/login/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/public/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/App.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/App.test.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/index.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/reportWebVitals.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/login/src/setupTests.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/public/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/App.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/App.test.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/index.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/reportWebVitals.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/navigation/src/setupTests.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/public/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/App.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/App.test.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/index.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/reportWebVitals.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/productlist/src/setupTests.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/public/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/App.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/App.test.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/index.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/reportWebVitals.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'React/shop/src/setupTests.js', LF will be replaced by CRLF the next time Git touches it
+
+E:\Exam>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   React/login/.gitignore
+        new file:   React/login/README.md
+        new file:   React/login/package-lock.json
+        new file:   React/login/package.json
+        new file:   React/login/public/favicon.ico
+        new file:   React/login/public/index.html
+        new file:   React/login/public/logo192.png
+        new file:   React/login/public/logo512.png
+        new file:   React/login/public/manifest.json
+        new file:   React/login/public/robots.txt
+        new file:   React/login/src/App.css
+        new file:   React/login/src/App.js
+        new file:   React/login/src/App.test.js
+        new file:   React/login/src/Login.js
+        new file:   React/login/src/Success.js
+        new file:   React/login/src/index.css
+        new file:   React/login/src/index.js
+        new file:   React/login/src/logo.svg
+        new file:   React/login/src/reportWebVitals.js
+        new file:   React/login/src/setupTests.js
+        new file:   React/navigation/.gitignore
+        new file:   React/navigation/README.md
+        new file:   React/navigation/package-lock.json
+        new file:   React/navigation/package.json
+        new file:   React/navigation/public/favicon.ico
+        new file:   React/navigation/public/index.html
+        new file:   React/navigation/public/logo192.png
+        new file:   React/navigation/public/logo512.png
+        new file:   React/navigation/public/manifest.json
+        new file:   React/navigation/public/robots.txt
+        new file:   React/navigation/src/App.css
+        new file:   React/navigation/src/App.js
+        new file:   React/navigation/src/App.test.js
+        new file:   React/navigation/src/Blogs.js
+        new file:   React/navigation/src/Contact.js
+        new file:   React/navigation/src/Home.js
+        new file:   React/navigation/src/Layout.js
+        new file:   React/navigation/src/NoPage.js
+        new file:   React/navigation/src/index.css
+        new file:   React/navigation/src/index.js
+        new file:   React/navigation/src/logo.svg
+        new file:   React/navigation/src/reportWebVitals.js
+        new file:   React/navigation/src/setupTests.js
+        new file:   React/productlist/.gitignore
+        new file:   React/productlist/README.md
+        new file:   React/productlist/package-lock.json
+        new file:   React/productlist/package.json
+        new file:   React/productlist/public/favicon.ico
+        new file:   React/productlist/public/index.html
+        new file:   React/productlist/public/logo192.png
+        new file:   React/productlist/public/logo512.png
+        new file:   React/productlist/public/manifest.json
+        new file:   React/productlist/public/robots.txt
+        new file:   React/productlist/src/App.css
+        new file:   React/productlist/src/App.js
+        new file:   React/productlist/src/App.test.js
+        new file:   React/productlist/src/index.css
+        new file:   React/productlist/src/index.js
+        new file:   React/productlist/src/logo.svg
+        new file:   React/productlist/src/reportWebVitals.js
+        new file:   React/productlist/src/setupTests.js
+        new file:   React/shop/.gitignore
+        new file:   React/shop/README.md
+        new file:   React/shop/package-lock.json
+        new file:   React/shop/package.json
+        new file:   React/shop/public/favicon.ico
+        new file:   React/shop/public/index.html
+        new file:   React/shop/public/logo192.png
+        new file:   React/shop/public/logo512.png
+        new file:   React/shop/public/manifest.json
+        new file:   React/shop/public/robots.txt
+        new file:   React/shop/src/App.css
+        new file:   React/shop/src/App.js
+        new file:   React/shop/src/App.test.js
+        new file:   React/shop/src/CartList.js
+        new file:   React/shop/src/Header.js
+        new file:   React/shop/src/ProductList.js
+        new file:   React/shop/src/index.css
+        new file:   React/shop/src/index.js
+        new file:   React/shop/src/reportWebVitals.js
+        new file:   React/shop/src/setupTests.js
+        new file:   React/shopping-cart.pdf
+
+
+E:\Exam>git commit -m "Exam commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'user@DESKTOP-PBMNUAV.(none)')
+
+E:\Exam>git config --global user.email "varunb5725@gmail.com"
+
+E:\Exam>git config --global user.name "Varun5725"
+
+E:\Exam>git commit -m "Exam commit"
+[master (root-commit) 310d79f] Exam commit
+ 82 files changed, 73234 insertions(+)
+ create mode 100644 React/login/.gitignore
+ create mode 100644 React/login/README.md
+ create mode 100644 React/login/package-lock.json
+ create mode 100644 React/login/package.json
+ create mode 100644 React/login/public/favicon.ico
+ create mode 100644 React/login/public/index.html
+ create mode 100644 React/login/public/logo192.png
+ create mode 100644 React/login/public/logo512.png
+ create mode 100644 React/login/public/manifest.json
+ create mode 100644 React/login/public/robots.txt
+ create mode 100644 React/login/src/App.css
+ create mode 100644 React/login/src/App.js
+ create mode 100644 React/login/src/App.test.js
+ create mode 100644 React/login/src/Login.js
+ create mode 100644 React/login/src/Success.js
+ create mode 100644 React/login/src/index.css
+ create mode 100644 React/login/src/index.js
+ create mode 100644 React/login/src/logo.svg
+ create mode 100644 React/login/src/reportWebVitals.js
+ create mode 100644 React/login/src/setupTests.js
+ create mode 100644 React/navigation/.gitignore
+ create mode 100644 React/navigation/README.md
+ create mode 100644 React/navigation/package-lock.json
+ create mode 100644 React/navigation/package.json
+ create mode 100644 React/navigation/public/favicon.ico
+ create mode 100644 React/navigation/public/index.html
+ create mode 100644 React/navigation/public/logo192.png
+ create mode 100644 React/navigation/public/logo512.png
+ create mode 100644 React/navigation/public/manifest.json
+ create mode 100644 React/navigation/public/robots.txt
+ create mode 100644 React/navigation/src/App.css
+ create mode 100644 React/navigation/src/App.js
+ create mode 100644 React/navigation/src/App.test.js
+ create mode 100644 React/navigation/src/Blogs.js
+ create mode 100644 React/navigation/src/Contact.js
+ create mode 100644 React/navigation/src/Home.js
+ create mode 100644 React/navigation/src/Layout.js
+ create mode 100644 React/navigation/src/NoPage.js
+ create mode 100644 React/navigation/src/index.css
+ create mode 100644 React/navigation/src/index.js
+ create mode 100644 React/navigation/src/logo.svg
+ create mode 100644 React/navigation/src/reportWebVitals.js
+ create mode 100644 React/navigation/src/setupTests.js
+ create mode 100644 React/productlist/.gitignore
+ create mode 100644 React/productlist/README.md
+ create mode 100644 React/productlist/package-lock.json
+ create mode 100644 React/productlist/package.json
+ create mode 100644 React/productlist/public/favicon.ico
+ create mode 100644 React/productlist/public/index.html
+ create mode 100644 React/productlist/public/logo192.png
+ create mode 100644 React/productlist/public/logo512.png
+ create mode 100644 React/productlist/public/manifest.json
+ create mode 100644 React/productlist/public/robots.txt
+ create mode 100644 React/productlist/src/App.css
+ create mode 100644 React/productlist/src/App.js
+ create mode 100644 React/productlist/src/App.test.js
+ create mode 100644 React/productlist/src/index.css
+ create mode 100644 React/productlist/src/index.js
+ create mode 100644 React/productlist/src/logo.svg
+ create mode 100644 React/productlist/src/reportWebVitals.js
+ create mode 100644 React/productlist/src/setupTests.js
+ create mode 100644 React/shop/.gitignore
+ create mode 100644 React/shop/README.md
+ create mode 100644 React/shop/package-lock.json
+ create mode 100644 React/shop/package.json
+ create mode 100644 React/shop/public/favicon.ico
+ create mode 100644 React/shop/public/index.html
+ create mode 100644 React/shop/public/logo192.png
+ create mode 100644 React/shop/public/logo512.png
+ create mode 100644 React/shop/public/manifest.json
+ create mode 100644 React/shop/public/robots.txt
+ create mode 100644 React/shop/src/App.css
+ create mode 100644 React/shop/src/App.js
+ create mode 100644 React/shop/src/App.test.js
+ create mode 100644 React/shop/src/CartList.js
+ create mode 100644 React/shop/src/Header.js
+ create mode 100644 React/shop/src/ProductList.js
+ create mode 100644 React/shop/src/index.css
+ create mode 100644 React/shop/src/index.js
+ create mode 100644 React/shop/src/reportWebVitals.js
+ create mode 100644 React/shop/src/setupTests.js
+ create mode 100644 React/shopping-cart.pdf
+
+E:\Exam>git branch -M main
+
+E:\Exam>git remote add origin https://github.com/Varun5725/Exam.git
+
+E:\Exam>git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 53, done.
+Counting objects: 100% (53/53), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (51/51), done.
+Writing objects: 100% (53/53), 220.88 KiB | 2.60 MiB/s, done.
+Total 53 (delta 10), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (10/10), done.
+To https://github.com/Varun5725/Exam.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+E:\Exam>git log
+commit 310d79fe93046834f709f257143ed951150e137c (HEAD -> main, origin/main)
+Author: Varun5725 <varunb5725@gmail.com>
+Date:   Tue Nov 28 09:31:17 2023 +0530
+
+    Exam commit
+
+E:\Exam>git add Html
+
+E:\Exam>git branch -M main
+
+E:\Exam>git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+
+E:\Exam>git add .
+
+E:\Exam>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Html/New Text Document.txt
+
+
+E:\Exam>git commit -m "Add HTML folder to exam folder"
+[main 25780b6] Add HTML folder to exam folder
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Html/New Text Document.txt
+
+E:\Exam>git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/Varun5725/Exam.git'
+
+E:\Exam>git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 343 bytes | 343.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Varun5725/Exam.git
+   310d79f..25780b6  main -> main
+
+E:\Exam>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+E:\Exam>git branch varun
+
+E:\Exam>git checkout
+Your branch is up to date with 'origin/main'.
+
+E:\Exam>git checkout varun
+Switched to branch 'varun'
+
+E:\Exam>git branch
+  main
+* varun
+
+E:\Exam>git checkout -b varun
+fatal: a branch named 'varun' already exists
+
+E:\Exam>git add .
+
+E:\Exam>git commit -m "Your commit message"
+On branch varun
+nothing to commit, working tree clean
+
+E:\Exam>copy con file
 hello guys
+^Z
+        1 file(s) copied.
+
+E:\Exam>git status
+On branch varun
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+E:\Exam>git add file
+
+E:\Exam>git commit -m "Your commit message"
+[varun 7d0a3eb] Your commit message
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file
+
+E:\Exam>git merge main
+Already up to date.
+
+E:\Exam>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+E:\Exam>git merge varun
+Updating 25780b6..7d0a3eb
+Fast-forward
+ file | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file
+
+E:\Exam>git branch varunb
+
+E:\Exam>git branch
+* main
+  varun
+  varunb
+
+E:\Exam>git branch -r
+  origin/main
+
+E:\Exam>git push origin varunb
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'varunb' on GitHub by visiting:
+remote:      https://github.com/Varun5725/Exam/pull/new/varunb
+remote:
+To https://github.com/Varun5725/Exam.git
+ * [new branch]      varunb -> varunb
+
+E:\Exam>
+E:\Exam>git remote -v
+origin  https://github.com/Varun5725/Exam.git (fetch)
+origin  https://github.com/Varun5725/Exam.git (push)
+
+E:\Exam>
