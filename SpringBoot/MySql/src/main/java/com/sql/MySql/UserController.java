@@ -31,7 +31,7 @@ public class UserController {
 	public User updateUser(@RequestBody User user , @PathVariable("id") long userId) {
 		User ex=this.Ur.findById(userId).orElse(null);
 		ex.setFirstname(user.getFirstname());
-		ex.setFirstname(user.getFirstname());
+		ex.setLastname(user.getLastname());
 		
 		return this.Ur.save(ex);
 	}

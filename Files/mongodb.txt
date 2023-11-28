@@ -1,0 +1,585 @@
+
+------
+   The server generated these startup warnings when booting
+   2023-11-11T18:59:12.602+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use Vdata
+switched to db Vdata
+Vdata> show dbs
+admin       40.00 KiB
+config      84.00 KiB
+department  72.00 KiB
+dq          72.00 KiB
+local       72.00 KiB
+varun       72.00 KiB
+Vdata>
+
+Vdata> db.dropDatabase()
+{ ok: 1, dropped: 'Vdata' }
+Vdata>
+
+Vdata> show dbs
+admin       40.00 KiB
+config      84.00 KiB
+department  72.00 KiB
+dq          72.00 KiB
+local       72.00 KiB
+varun       72.00 KiB
+Vdata>
+
+Vdata> use data
+switched to db data
+data>
+
+data> db.createCollection("mycls")
+{ ok: 1 }
+data> show collections
+mycls
+data> db.newcls.insert({name:"varun"})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6565e5419c75ce829ac5f305") }
+}
+data>
+
+data> show collections
+mycls
+newcls
+data> db.mycls.drop()
+true
+data> show collections
+newcls
+data>
+
+data> db.products.insertMany([{name:"Product A",price:20,category:"Electronics"},{name:"Product B",price:15,categrory:"Clothing"},{name:"Product C",price:10,category:"Home Goods"},{name:"Product D",price:5,category:"Electronics"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6565e6b49c75ce829ac5f306"),
+    '1': ObjectId("6565e6b49c75ce829ac5f307"),
+    '2': ObjectId("6565e6b49c75ce829ac5f308"),
+    '3': ObjectId("6565e6b49c75ce829ac5f309")
+  }
+}
+data> db.products.find
+([Function: find] AsyncFunction {
+  returnsPromise: true,
+  apiVersions: [ 1, Infinity ],
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+data> db.products.find()
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f306"),
+    name: 'Product A',
+    price: 20,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f307"),
+    name: 'Product B',
+    price: 15,
+    categrory: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f308"),
+    name: 'Product C',
+    price: 10,
+    category: 'Home Goods'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f309"),
+    name: 'Product D',
+    price: 5,
+    category: 'Electronics'
+  }
+]
+data> db.products.find().pretty()
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f306"),
+    name: 'Product A',
+    price: 20,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f307"),
+    name: 'Product B',
+    price: 15,
+    categrory: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f308"),
+    name: 'Product C',
+    price: 10,
+    category: 'Home Goods'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f309"),
+    name: 'Product D',
+    price: 5,
+    category: 'Electronics'
+  }
+]
+data> db.products.find({category:"Electronics"})
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f306"),
+    name: 'Product A',
+    price: 20,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f309"),
+    name: 'Product D',
+    price: 5,
+    category: 'Electronics'
+  }
+]
+data> db.products.findOne({category:"Electronics"})
+{
+  _id: ObjectId("6565e6b49c75ce829ac5f306"),
+  name: 'Product A',
+  price: 20,
+  category: 'Electronics'
+}
+data> db.products.updateOne({name:"Product B"},{$set:{price:25}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+data> db.products.find()
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f306"),
+    name: 'Product A',
+    price: 20,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f307"),
+    name: 'Product B',
+    price: 25,
+    categrory: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f308"),
+    name: 'Product C',
+    price: 10,
+    category: 'Home Goods'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f309"),
+    name: 'Product D',
+    price: 5,
+    category: 'Electronics'
+  }
+]
+data> db.products.updateMany({category:"Electronics"},{$set:{price:30}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+data> db.products.find()
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f306"),
+    name: 'Product A',
+    price: 30,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f307"),
+    name: 'Product B',
+    price: 25,
+    categrory: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f308"),
+    name: 'Product C',
+    price: 10,
+    category: 'Home Goods'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f309"),
+    name: 'Product D',
+    price: 30,
+    category: 'Electronics'
+  }
+]
+data> db.products.deleteOne({name:"Products C"})
+{ acknowledged: true, deletedCount: 0 }
+data> db.products.deleteMany({category:"Electronics"})
+{ acknowledged: true, deletedCount: 2 }
+data>
+
+data> db.products.find()
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f307"),
+    name: 'Product B',
+    price: 25,
+    categrory: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f308"),
+    name: 'Product C',
+    price: 10,
+    category: 'Home Goods'
+  }
+]
+data> db.products.deleteOne({name:"Product C"})
+{ acknowledged: true, deletedCount: 1 }
+data> db.products.find()
+[
+  {
+    _id: ObjectId("6565e6b49c75ce829ac5f307"),
+    name: 'Product B',
+    price: 25,
+    categrory: 'Clothing'
+  }
+]
+data> db.products.deleteMany({})
+{ acknowledged: true, deletedCount: 1 }
+data> db.products.find()
+
+data>
+
+data> use mydatabase  // Switch to your desired database
+switched to db mydatabase
+mydatabase>
+
+mydatabase> db.products.insertMany([
+...   { name: "Product A", price: 20.99, category: "Electronics" },
+mydatabase> use data
+switched to db datauct C", price: 10.99, category: "Home Goods" }
+data> db.products.insertMany([ { name: "Product A", price: 20.99, category: "Electronics" }, { name: "Product B", price: 15.50, category: "Clothing" }, { name: "Product C", price: 10.99, category: "Home Goods" }] )
+{ acknowledged: true,
+  acknowledged: true,
+  insertedIds: {d("6565e8779c75ce829ac5f30a"),
+    '0': ObjectId("6565e8c59c75ce829ac5f30d"),
+    '1': ObjectId("6565e8c59c75ce829ac5f30e"),
+    '2': ObjectId("6565e8c59c75ce829ac5f30f")
+  }
+}ydatabase> db.drop()
+data>
+mydatabase> db.dropDatabase()
+{ ok: 1, dropped: 'mydatabase' }
+mydatabase>
+
+data> db.products.find().limit(2)
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30d"),
+    name: 'Product A',
+    price: 20.99,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  }
+]
+data>
+
+data> db.products.find().sort({price:1})
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30f"),
+    name: 'Product C',
+    price: 10.99,
+    category: 'Home Goods'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30d"),
+    name: 'Product A',
+    price: 20.99,
+    category: 'Electronics'
+  }
+]
+data> db.products.find().sort({price:-1})
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30d"),
+    name: 'Product A',
+    price: 20.99,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30f"),
+    name: 'Product C',
+    price: 10.99,
+    category: 'Home Goods'
+  }
+]
+data> db.products.find().toArray()
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30d"),
+    name: 'Product A',
+    price: 20.99,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30f"),
+    name: 'Product C',
+    price: 10.99,
+    category: 'Home Goods'
+  }
+]
+data> db.products.find().forEach(function(pro){print("product name is: "+pro.name)})
+product name is: Product A
+product name is: Product B
+product name is: Product C
+
+data> db.products.find().forEach(function(pro){print("product name is: "+pro.name,"Price is :"+pro.price)})
+product name is: Product A Price is :20.99
+product name is: Product B Price is :15.5
+product name is: Product C Price is :10.99
+
+data> db.products.createIndex({name:1})
+name_1
+data> db.products.createIndex({name:-1})
+name_-1
+data> db.products.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { name: 1 }, name: 'name_1' },
+  { v: 2, key: { name: -1 }, name: 'name_-1' }
+]
+data> db.products.dropIndex({name:1})
+{ nIndexesWas: 3, ok: 1 }
+data> db.products.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { name: -1 }, name: 'name_-1' }
+]
+data> db.products.dropIndex("name_-1")
+{ nIndexesWas: 2, ok: 1 }
+data> db.products.getIndexes()
+[ { v: 2, key: { _id: 1 }, name: '_id_' } ]
+data> db.products.find()
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30d"),
+    name: 'Product A',
+    price: 20.99,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30f"),
+    name: 'Product C',
+    price: 10.99,
+    category: 'Home Goods'
+  }
+]
+data> db.products.insertMany([{name:"Product D",price:26,category:"Electronics"},{name:"Product E",price:12,category:"Clothing"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6565edc69c75ce829ac5f310"),
+    '1': ObjectId("6565edc69c75ce829ac5f311")
+  }
+}
+data> db.products.aggregate([$group:{_id:"$category",total:{$sum:"$price"}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:29)
+
+> 1 | db.products.aggregate([$group:{_id:"$category",total:{$sum:"$price"}}])
+    |                              ^
+  2 |
+
+data> db.products.aggregate([{$group:{_id:"$category",total:{$sum:"$price"}}}])
+[
+  { _id: 'Electronics', total: 46.989999999999995 },
+  { _id: 'Clothing', total: 27.5 },
+  { _id: 'Home Goods', total: 10.99 }
+]
+data> db.products.aggregate([{$group:{_id:null,total:{$sum:"$price"}}}])
+[ { _id: null, total: 85.48 } ]
+data>
+
+data>
+
+data> db.products.aggregate([{$group:{_id:"$category"}}])
+[ { _id: 'Electronics' }, { _id: 'Clothing' }, { _id: 'Home Goods' } ]
+data>
+
+data> db.products.aggregate([{$match:{_id:"$category"}}])
+
+data> db.products.aggregate([{$match:{category:"Clothing"}}])
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565edc69c75ce829ac5f311"),
+    name: 'Product E',
+    price: 12,
+    category: 'Clothing'
+  }
+]
+data> db.products.aggregate([{$sort:{name:1})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:38)
+
+> 1 | db.products.aggregate([{$sort:{name:1})
+    |                                       ^
+  2 |
+
+data> db.products.aggregate([{$sort:{name:1}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:38)
+
+> 1 | db.products.aggregate([{$sort:{name:1}])
+    |                                       ^
+  2 |
+
+data> db.products.aggregate([{$sort:{name:1}}])
+[
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30d"),
+    name: 'Product A',
+    price: 20.99,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30e"),
+    name: 'Product B',
+    price: 15.5,
+    category: 'Clothing'
+  },
+  {
+    _id: ObjectId("6565e8c59c75ce829ac5f30f"),
+    name: 'Product C',
+    price: 10.99,
+    category: 'Home Goods'
+  },
+  {
+    _id: ObjectId("6565edc69c75ce829ac5f310"),
+    name: 'Product D',
+    price: 26,
+    category: 'Electronics'
+  },
+  {
+    _id: ObjectId("6565edc69c75ce829ac5f311"),
+    name: 'Product E',
+    price: 12,
+    category: 'Clothing'
+  }
+]
+data> db.createUser({user:"varun",pwd:"bbbb",roles:[{role:"readWrite",db:"data"}]})
+{ ok: 1 }
+data> db.createUser({user:"varunB",pwd:passwordPrompt(),roles:[{role:"read",db:"data"}]})
+Enter password
+ABCD
+****{ ok: 1 }
+data>
+
+data> show users
+[
+  {
+    _id: 'data.varun',
+    userId: new UUID("f7883e23-7c65-44c8-aabf-9a16ca24dea9"),
+    user: 'varun',
+    db: 'data',
+    roles: [ { role: 'readWrite', db: 'data' } ],
+    mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+  },
+  {
+    _id: 'data.varunB',
+    userId: new UUID("05d20bee-e0b8-4429-9b7b-d4492f71d8a4"),
+    user: 'varunB',
+    db: 'data',
+    roles: [ { role: 'read', db: 'data' } ],
+    mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+  }
+]
+data> db.changeUserPassword("varun","ABCD")
+{ ok: 1 }
+data> db.dropUser("varunB")
+{ ok: 1 }
+data> show users
+[
+  {
+    _id: 'data.varun',
+    userId: new UUID("f7883e23-7c65-44c8-aabf-9a16ca24dea9"),
+    user: 'varun',
+    db: 'data',
+    roles: [ { role: 'readWrite', db: 'data' } ],
+    mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+  }
+]
+data> db.updateUser("varun",{roles:[role:"read",db:"data"}]});
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:34)
+
+> 1 | db.updateUser("varun",{roles:[role:"read",db:"data"}]});
+    |                                   ^
+  2 |
+
+data> db.updateUser("varun",{roles:[{role:"write",db:"data"}]});
+MongoServerError: Could not find role: write@data
+data>
+
+data> db.updateUser("varun",{roles:[{role:"read",db:"data"}]});
+{ ok: 1 }
+data>
+
+data> show users
+[
+  {
+    _id: 'data.varun',
+    userId: new UUID("f7883e23-7c65-44c8-aabf-9a16ca24dea9"),
+    user: 'varun',
+    db: 'data',
+    roles: [ { role: 'read', db: 'data' } ],
+    mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+  }
+]
+data>
