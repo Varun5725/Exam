@@ -93,3 +93,8 @@ server.port=555
 
 
 
+//dependencies
+Lombok
+DevTools
+Spring Web
+MongoDB
